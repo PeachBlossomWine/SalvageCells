@@ -1,6 +1,6 @@
 _addon.name = 'SalvageCells'
 _addon.author = 'PBW'
-_addon.version = '1.8'
+_addon.version = '1.8.1'
 _addon.commands = {'salvage'}
 
 require('functions')
@@ -79,7 +79,7 @@ windower.register_event('incoming chunk', function(id, original)
 end)
 
 windower.register_event('load', function()
-	windower.add_to_chat(262,'[Salvage] Welcome to Salvage Cells!')
+	windower.add_to_chat(262,'[SalvageCells] Salvage Cells - Loaded.')
 end)
 
 function initialize()
