@@ -68,7 +68,7 @@ windower.register_event('incoming chunk', function(id, original)
 	if salvage_area:contains(zone_info.zone) then
 		if id == 0x01B then
 			update_encumbrance(original)
-			windower.add_to_chat(12,'Incoming Chunk bitfield: ' ..encumbrance_bitfield)
+			--windower.add_to_chat(12,'Incoming Chunk bitfield: ' ..encumbrance_bitfield)
 		elseif id == 0x028 then	
 			local action = packets.parse('incoming', original)
 			if action["Category"] == 5 and action.Actor == windower.ffxi.get_player().id then
@@ -90,7 +90,7 @@ end
 
 function update_encumbrance(data)
     encumbrance_bitfield = not data and 0 or packets.parse('incoming', data)['Encumbrance Flags']
-    windower.add_to_chat(12,'Update encumbrance_bitfield: '..encumbrance_bitfield)
+    --windower.add_to_chat(12,'Update encumbrance_bitfield: '..encumbrance_bitfield)
 end
 
 function useCells()
@@ -117,3 +117,4 @@ function useCells()
 end
 
 initialize()
+useCells:loop(10)
